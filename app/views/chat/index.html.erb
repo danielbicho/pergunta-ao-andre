@@ -1,0 +1,18 @@
+
+<div>
+  <%= image_tag "andre.png", style: 'height:300px;width:auto' %>
+<div>
+
+Pergunta ao André:
+<%= form_with url: "/chat", method: :get, data: { turbo_frame: "answer" } do |form| %>
+  <%= form.text_field :query %>
+  <%= form.submit "Pergunta" %>
+<% end %>
+
+<%= turbo_frame_tag "answer" do %>
+  <p>Estou aborrecido...<p>
+<% end %>
+
+
+
+
