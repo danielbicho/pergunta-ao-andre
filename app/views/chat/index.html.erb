@@ -4,7 +4,7 @@
 <div>
 
 Pergunta ao André:
-<%= form_with url: "/chat", method: :get, data: { turbo_frame: "answer" } do |form| %>
+<%= form_with url: "/ask", method: :get, data: { turbo_frame: "answer" } do |form| %>
   <%= form.text_field :query %>
   <%= form.submit "Pergunta" %>
 <% end %>
