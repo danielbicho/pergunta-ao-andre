@@ -3,7 +3,16 @@ class ChatController < ApplicationController
   end
 
   def ask
-    @result = HuggingFaceClient.new.ask(params[:query])
-    @result
+    OpenAiClient.new.ask(params[:query]) do |chunk|
+      if token = chunk.dig("choices", 0, "delta", "content")
+        Turbo::StreamsChannel.broadcast_append_to(
+          :answers,
+          target: "answer",
+          content: "#{token}",
+        )
+      end
+    end
+
+    head :ok
   end
 end
