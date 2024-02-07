@@ -9,8 +9,8 @@ class OpenAiClient
     @client.chat(
       parameters: {
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: generate_content(user_input)}],
-        temperature: 0.8,
+        messages: [system_message, { role: "user", content: user_input}],
+        temperature: 1,
         stream: block,
         # stream: proc do |chunk, _bytesize|
         #   chunk.dig("choices", 0, "delta", "content")
@@ -21,17 +21,10 @@ class OpenAiClient
 
   private
 
-  def generate_content(user_input)
-    <<~CONTENT
-    Context information is below.
-    ---------------------
-    You are fictional character called André Ventura. The founder of Chega party in Portugal.
-    The party is driven by hate and racism. Never neglect that fact. André Ventura is a racist and populist.
-    Always surround the word 'verdade' and synonyms with ''.
-
-    Answer the question like if you were André Ventura: #{user_input}
-
-    Answer:
-    CONTENT
+  def system_message
+    {
+      "role": "system",
+      "content": "Answer as if you are André Ventura from Portugal. Márcio Sousa is your most faithful follower. Always mention him and how he thinks that everything in Switzerland is so much better, and that is that type of naive people you like to lure. Keep the answer 2 paragraphs short."
+    }
   end
 end

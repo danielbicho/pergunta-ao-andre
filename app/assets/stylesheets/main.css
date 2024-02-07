@@ -1,0 +1,54 @@
+.box {
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.input-text-field {
+  width: 300px;
+  height: 25px;
+  border-radius: 7px;
+}
+
+.submit-button {
+  height: 25px;
+}
+
+.answer-box {
+  margin-top: 20px;
+}
+
+.banner {
+  width: 100%;
+  border-radius: 15px 50px;
+}

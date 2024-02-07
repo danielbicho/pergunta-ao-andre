@@ -1,18 +1,25 @@
+<div class="box">
+  <div class="header">
+    <%= image_tag "andre.png", class: "banner" %>
+  </div>
+
+  <div class="main">
+    <div>
+      <h1>Pergunta ao André</h1>
+    </div>
+    <%= form_with url: "/ask", method: :get, data: { turbo_stream: true, turbo_frame: "answer" }, class: "input-box" do |form| %>
+      <div class="input-box">
+        <div>
+          <%= form.text_field :query, class: "input-text-field" %>
+        </div>
+        <div>
+          <%= form.submit "Perguntar", class: "submit-button" %>
+        </div>
+      </div>
+    <% end %>
+
+    <turbo-frame id="answer" class="answer-box"></turbo-frame>
+  </div>
+</div>
+
 <%= turbo_stream_from(:answers) %>
-
-<div>
-  <%# <%= image_tag "andre.png", style: 'height:300px;width:auto' %>
-<div>
-
-Pergunta ao André:
-<%= form_with url: "/ask", method: :get, data: { turbo_stream: true, turbo_frame: "answer" } do |form| %>
-  <%= form.text_field :query %>
-  <%= form.submit "Pergunta" %>
-<% end %>
-
-<turbo-frame id="answer">
-</turbo-frame>
-
-
-
-
