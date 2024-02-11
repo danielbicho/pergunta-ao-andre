@@ -9,12 +9,8 @@
     </div>
     <%= form_with url: "/ask", method: :get, data: { turbo_stream: true, turbo_frame: "answer" }, class: "input-box" do |form| %>
       <div class="input-box">
-        <div>
-          <%= form.text_field :query, class: "input-text-field" %>
-        </div>
-        <div>
-          <%= form.submit "Perguntar", class: "submit-button" %>
-        </div>
+        <%= form.text_field :query, class: "input-text-field" %>
+        <%= form.submit "Perguntar", class: "submit-button" %>
       </div>
     <% end %>
 

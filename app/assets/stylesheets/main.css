@@ -1,18 +1,23 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .box {
   display: flex;
-  max-width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 90%;
   margin-bottom: 20px;
 }
 
@@ -23,7 +28,6 @@
   font-size: 16px;
   justify-content: center;
   align-items: center;
-  width: 60%;
 }
 
 .input-box {
@@ -31,13 +35,15 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .input-text-field {
+  display: flex;
   width: 300px;
   height: 25px;
   border-radius: 7px;
+  margin: 10px;
 }
 
 .submit-button {
@@ -47,6 +53,8 @@
 }
 
 .answer-box {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
 }
 
